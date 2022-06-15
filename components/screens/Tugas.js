@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import tw from "twrnc";
+import SheetTugas from "../modal/SheetTugas";
 import { DownloadSVG, LinkSVG, PuzzleSVG } from "../../lib/listSvg";
 
 export default function Tugas() {
@@ -484,6 +485,7 @@ export default function Tugas() {
           </ScrollView>
         </View>
       </View>
+      <SheetTugas />
     </SafeAreaView>
   );
 }

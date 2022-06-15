@@ -19,7 +19,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { HomeSVG, TugasSVG, ActivitySVG, ProfileSVG } from "./lib/listSvg";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { PortalProvider } from "@gorhom/portal";
 import tw from "twrnc";
 import { DownArrowSVG } from "./lib/listSvg";
@@ -27,6 +27,7 @@ const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
 function TabNav() {
+  const { act, ctx } = useContext(GlobalContext);
   return (
     <Tab.Navigator
       initialRouteName='Home'
@@ -56,7 +57,7 @@ function TabNav() {
               return (
                 <View style={tw`w-full px-4 flex justify-end flex-row`}>
                   <TouchableOpacity
-                    onPress={() => alert("oi")}
+                    onPress={() => act.setSheet("sheetTugas")}
                     style={tw`bg-white w-24 h-7 rounded-full flex flex-row items-center justify-between px-4`}
                   >
                     <Text style={tw`font-bold text-blue-600`}>Filter</Text>
@@ -86,7 +87,7 @@ function TabNav() {
               return (
                 <View style={tw`w-full px-4 flex justify-end flex-row`}>
                   <TouchableOpacity
-                    onPress={() => alert("oi")}
+                    onPress={() => act.setSheet("sheetHistory")}
                     style={tw`bg-white w-24 h-7 rounded-full flex flex-row items-center justify-between px-4`}
                   >
                     <Text style={tw`font-bold text-blue-600`}>Filter</Text>

@@ -1,67 +1,65 @@
-import React, { useCallback, useMemo, useRef } from "react";
-import { View, Text, StyleSheet, Button } from "react-native";
 import tw from "twrnc";
-import { Portal } from "@gorhom/portal";
-import { useEffect } from "react";
-import BottomSheet, { BottomSheetBackdrop } from "@gorhom/bottom-sheet";
-export default function Sheet({ sheetHistory, setSheetHistory }) {
-  // ref
-  const bottomSheetRef = useRef(null);
+import {
+  Text,
+  View,
+  Button,
+  Pressable,
+  Image,
+  ScrollView,
+  TouchableOpacity,
+} from "react-native";
+import Modal from "react-native-modal";
+import { GlobalContext } from "../../context/global";
+import { useContext } from "react";
+import { LogoutSVG } from "../../lib/listSvg";
 
-  // variables
-  const snapPoints = useMemo(() => ["25%", "50%", "75%"], []);
-  // callbacks
-  const handleSheetChanges = useCallback((index) => {
-    console.log("handleSheetChanges", index);
-  }, []);
+const SheetHistory = () => {
+  const { act, ctx } = useContext(GlobalContext);
 
-  // const Close = () => {
-  //   bottomSheetRef?.current?.close();
-  // };
-  // const Open = () => {
-  //   bottomSheetRef?.current?.snapToIndex(1);
-  // };
-
-  useEffect(() => {
-    sheetHistory
-      ? bottomSheetRef?.current?.snapToIndex(1)
-      : bottomSheetRef?.current?.close();
-  }, [sheetHistory]);
-
-  const renderBackdrop = useCallback(
-    (props) => (
-      <BottomSheetBackdrop
-        {...props}
-        enableTouchThrough={true}
-        disappearsOnIndex={0}
-        appearsOnIndex={1}
-        opacity={0.5}
-      />
-    ),
-    []
-  );
-
-  // renders
   return (
-    <>
-      <Portal>
-        <BottomSheet
-          ref={bottomSheetRef}
-          index={-1}
-          backdropComponent={renderBackdrop}
-          snapPoints={snapPoints}
-          onChange={handleSheetChanges}
+    <Modal
+      scrollHorizontal={true}
+      style={tw`m-0`}
+      coverScreen={true}
+      //   onSwipeThreshold={0}
+      onSwipeComplete={async ({ swipingDirection }) => {
+        if (swipingDirection === "up") {
+          await act.setSheet("sheetHistory");
+        } else if (swipingDirection === "down") {
+          await act.setSheet("");
+        }
+      }}
+      useNativeDriverForBackdrop={true}
+      swipeDirection={["down"]}
+      propagateSwipe={true}
+      isVisible={ctx.sheet === "sheetHistory" ? true : false}
+      onBackButtonPress={() => act.setSheet("")}
+      onBackdropPress={() => act.setSheet("")}
+      backdropColor={"black"}
+    >
+      <View
+        style={tw`bg-white w-full h-80 absolute bottom-0 rounded-t-xl overflow-hidden`}
+      >
+        <View
+          style={tw`w-full bg-gray-200 h-8 flex items-center justify-center`}
         >
           <View
-            style={{
-              flex: 1,
-              alignItems: "center",
-            }}
-          >
-            <Text onPress={() => setSheetHistory(false)}>Awesome 🎉</Text>
-          </View>
-        </BottomSheet>
-      </Portal>
-    </>
+            style={tw`bg-gray-500 h-1 w-44 rounded-full items-center justify-center`}
+          ></View>
+        </View>
+        <ScrollView>
+          <Pressable>
+            <TouchableOpacity style={tw`bg-white  overflow-hidden w-full p-4`}>
+              <Text>Absensi</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={tw`bg-white  overflow-hidden w-full p-4`}>
+              <Text>Pembayaran</Text>
+            </TouchableOpacity>
+          </Pressable>
+        </ScrollView>
+      </View>
+    </Modal>
   );
-}
+};
+
+export default SheetHistory;
