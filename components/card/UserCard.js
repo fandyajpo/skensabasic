@@ -1,7 +1,7 @@
 import { View, Text } from "react-native";
 import { memo, useMemo } from "react";
 import tw from "twrnc";
-import { Pressable } from "react-native";
+import { Pressable, Image, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { Loading } from "../../lib/listSvg";
 import Svg, { G, Rect } from "react-native-svg";
@@ -11,21 +11,24 @@ const UserCard = ({ toggleModal }) => {
   return (
     <View style={tw`w-full pb-2`}>
       <View
-        style={tw`w-full bg-blue-500 h-52 flex flex-col justify-between shadow-md`}
+        style={tw`w-full bg-blue-600 h-52 flex flex-col justify-between shadow-md`}
       >
         <View style={tw`flex items-center justify-center pt-11`}>
           {/* 3 BULETAN */}
           {useMemo(() => {
             return (
               <>
-                <View
-                  style={tw`bg-blue-600 w-24 h-24 absolute rounded-full -right-4 -top-4 shadow-sm`}
+                <Image
+                  source={require("../../assets/blueblue.webp")}
+                  style={tw`w-24 h-24 absolute rounded-full opacity-60 -right-8 -top-4`}
                 />
-                <View
-                  style={tw`bg-blue-600 w-32 h-32 absolute rounded-full -left-12 -bottom-14 shadow-sm`}
+                <Image
+                  source={require("../../assets/blueblue.webp")}
+                  style={tw`w-32 h-32 absolute rounded-full opacity-60 -left-20 -bottom-14`}
                 />
-                <View
-                  style={tw`bg-blue-400 w-24 h-24 absolute rounded-full right-24 -bottom-24 shadow-sm`}
+                <Image
+                  source={require("../../assets/blueblue.webp")}
+                  style={tw`w-24 h-24 absolute rounded-full opacity-60 right-24 -bottom-27`}
                 />
               </>
             );
@@ -54,18 +57,22 @@ const UserCard = ({ toggleModal }) => {
                     <View
                       style={tw`bg-white py-2 px-4 rounded-md shadow-sm mr-2`}
                     >
-                      <Pressable onPress={() => navigation.navigate("Camera")}>
+                      <TouchableOpacity
+                        onPress={() => navigation.navigate("Camera")}
+                      >
                         <Text style={tw`font-bold text-gray-600`}>
                           Clock in
                         </Text>
-                      </Pressable>
+                      </TouchableOpacity>
                     </View>
                     <View style={tw`bg-white py-2 px-4 rounded-md shadow-sm`}>
-                      <Pressable onPress={() => navigation.navigate("Camera")}>
+                      <TouchableOpacity
+                        onPress={() => navigation.navigate("Camera")}
+                      >
                         <Text style={tw`font-bold text-gray-600`}>
                           Clock out
                         </Text>
-                      </Pressable>
+                      </TouchableOpacity>
                     </View>
                   </View>
                 </>

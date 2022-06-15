@@ -4,12 +4,13 @@ import tw from "twrnc";
 import { Portal } from "@gorhom/portal";
 import { useEffect } from "react";
 import BottomSheet, { BottomSheetBackdrop } from "@gorhom/bottom-sheet";
-export default function Sheet({ openSheet, setOpenSheet }) {
+
+export default function Sheet({ sheetKehadiran, setSheetKehadiran }) {
   // ref
   const bottomSheetRef = useRef(null);
 
   // variables
-  const snapPoints = useMemo(() => ["25%", "50%", "75%"], []);
+  const snapPoints = useMemo(() => ["25%", "50%"], []);
   // callbacks
   const handleSheetChanges = useCallback((index) => {
     console.log("handleSheetChanges", index);
@@ -23,20 +24,19 @@ export default function Sheet({ openSheet, setOpenSheet }) {
   // };
 
   useEffect(() => {
-    openSheet
+    sheetKehadiran
       ? bottomSheetRef?.current?.snapToIndex(1)
       : bottomSheetRef?.current?.close();
-  }, [openSheet]);
+  }, [sheetKehadiran]);
 
   const renderBackdrop = useCallback(
     (props) => (
       <BottomSheetBackdrop
         {...props}
         enableTouchThrough={true}
-        disappearsOnIndex={0}
-        appearsOnIndex={1}
-        onPress={() => setOpenSheet(false)}
-        // pressBehavior={() => setOpenSheet(false)}
+        // disappearsOnIndex={0}
+        // appearsOnIndex={4}
+        // pressBehavior={"close"}
         opacity={0.5}
       />
     ),
@@ -50,6 +50,10 @@ export default function Sheet({ openSheet, setOpenSheet }) {
         <BottomSheet
           ref={bottomSheetRef}
           index={-1}
+          enableContentPanningGesture={true}
+          enableHandlePanningGesture={true}
+          enableOverDrag={true}
+          animateOnMount={true}
           backdropComponent={renderBackdrop}
           snapPoints={snapPoints}
           onChange={handleSheetChanges}
@@ -60,7 +64,7 @@ export default function Sheet({ openSheet, setOpenSheet }) {
               alignItems: "center",
             }}
           >
-            <Text onPress={() => setOpenSheet(false)}>Awesome 🎉</Text>
+            <Text onPress={() => setSheetKehadiran(false)}>Awesome 🎉</Text>
           </View>
         </BottomSheet>
       </Portal>

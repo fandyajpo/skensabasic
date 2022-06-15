@@ -1,5 +1,6 @@
 import { View, Text, ImageBackground } from "react-native";
 import tw from "twrnc";
+import { StudySVG, RightArrowSVG } from "../../lib/listSvg";
 
 const PresensiCard = () => {
   return (
@@ -8,23 +9,28 @@ const PresensiCard = () => {
         <Text style={tw`font-semibold text-gray-500`}>Presensi</Text>
       </View>
       <ImageBackground
-        source={require("../../assets/fa.webp")}
-        style={tw`rounded-md overflow-hidden shadow-sm`}
+        source={require("../../assets/blueblue.webp")}
+        style={tw`rounded-md overflow-hidden shadow-md`}
       >
+        <StudySVG col={"absolute w-36 h-36 text-blue-500/40 right-0"} />
         <View
-          style={tw`w-full rounded-md py-4 px-3 flex flex-row items-center justify-between`}
+          style={tw`w-full rounded-md p-4 flex flex-row items-center justify-between`}
         >
           <View
             style={tw`bg-gray-100/50 border border-blue-200 p-2 w-2/4 rounded-md`}
           >
-            <Text style={tw`text-white font-bold text-lg`}>
-              Presensi Datang
-            </Text>
+            <Text style={tw`text-white font-bold text-lg`}>Presensi</Text>
             <View>
-              <Text style={tw`text-blue-500 text-base font-semibold`}>
+              <View style={tw`flex flex-row items-center py-1`}>
+                <RightArrowSVG col={"text-green-200 w-4 h-4"} />
+                <Text style={tw`text-white font-bold underline`}>
+                  SMKN 1 Denpasar
+                </Text>
+              </View>
+              <Text style={tw`text-green-200 text-sm font-semibold`}>
                 Datang : 03.33
               </Text>
-              <Text style={tw`text-blue-500 text-base font-bold`}>
+              <Text style={tw`text-green-200 text-sm font-bold`}>
                 Pulang : 06.43
               </Text>
             </View>

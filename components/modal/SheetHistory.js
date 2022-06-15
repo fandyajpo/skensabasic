@@ -4,14 +4,12 @@ import tw from "twrnc";
 import { Portal } from "@gorhom/portal";
 import { useEffect } from "react";
 import BottomSheet, { BottomSheetBackdrop } from "@gorhom/bottom-sheet";
-import Chart from "../chart/chart";
-
-export default function Sheet({ sheetKehadiran, setSheetKehadiran }) {
+export default function Sheet({ sheetHistory, setSheetHistory }) {
   // ref
   const bottomSheetRef = useRef(null);
 
   // variables
-  const snapPoints = useMemo(() => ["25%", "50%"], []);
+  const snapPoints = useMemo(() => ["25%", "50%", "75%"], []);
   // callbacks
   const handleSheetChanges = useCallback((index) => {
     console.log("handleSheetChanges", index);
@@ -25,19 +23,18 @@ export default function Sheet({ sheetKehadiran, setSheetKehadiran }) {
   // };
 
   useEffect(() => {
-    sheetKehadiran
+    sheetHistory
       ? bottomSheetRef?.current?.snapToIndex(1)
       : bottomSheetRef?.current?.close();
-  }, [sheetKehadiran]);
+  }, [sheetHistory]);
 
   const renderBackdrop = useCallback(
     (props) => (
       <BottomSheetBackdrop
         {...props}
         enableTouchThrough={true}
-        // disappearsOnIndex={0}
-        // appearsOnIndex={4}
-        // pressBehavior={"close"}
+        disappearsOnIndex={0}
+        appearsOnIndex={1}
         opacity={0.5}
       />
     ),
@@ -51,10 +48,6 @@ export default function Sheet({ sheetKehadiran, setSheetKehadiran }) {
         <BottomSheet
           ref={bottomSheetRef}
           index={-1}
-          enableContentPanningGesture={true}
-          enableHandlePanningGesture={true}
-          enableOverDrag={true}
-          animateOnMount={true}
           backdropComponent={renderBackdrop}
           snapPoints={snapPoints}
           onChange={handleSheetChanges}
@@ -65,8 +58,7 @@ export default function Sheet({ sheetKehadiran, setSheetKehadiran }) {
               alignItems: "center",
             }}
           >
-            <Text onPress={() => setSheetKehadiran(false)}>Click to close</Text>
-            <Chart />
+            <Text onPress={() => setSheetHistory(false)}>Awesome 🎉</Text>
           </View>
         </BottomSheet>
       </Portal>

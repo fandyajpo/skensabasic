@@ -1,13 +1,25 @@
 import tw from "twrnc";
-import { Text, View, Button, Pressable, Image } from "react-native";
+import {
+  Text,
+  View,
+  Button,
+  Pressable,
+  Image,
+  ScrollView,
+  TouchableOpacity,
+} from "react-native";
 import Modal from "react-native-modal";
 import { GlobalContext } from "../../context/global";
 import { useContext } from "react";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { LogoutSVG } from "../../lib/listSvg";
+
 const LogoutModal = ({ toggleModal, isModalVisible, setModalVisible }) => {
   const { act, ctx } = useContext(GlobalContext);
   return (
     <Modal
+      scrollHorizontal={true}
+      style={tw`m-0`}
+      coverScreen={true}
       onSwipeThreshold={200}
       onSwipeComplete={({ swipingDirection }) => {
         if (swipingDirection === "up") {
@@ -24,19 +36,20 @@ const LogoutModal = ({ toggleModal, isModalVisible, setModalVisible }) => {
       onBackButtonPress={toggleModal}
       onBackdropPress={toggleModal}
       backdropColor={"black"}
-      coverScreen={true}
     >
+      {/* <ScrollView> */}
       <View
-        style={tw`bg-white shadow-xl rounded-2xl overflow-hidden w-full h-32 absolute bottom-0`}
+        style={tw`bg-white shadow-xl rounded-2xl overflow-hidden w-full h-36 absolute bottom-0`}
       >
-        <TouchableOpacity style={tw`flex flex-row justify-center`}>
+        <View style={tw`flex flex-row justify-center`}>
           <View style={tw`bg-gray-500 w-24 h-1 mt-1 rounded-full`} />
-        </TouchableOpacity>
-        <View style={tw`  p-4`}>
-          <View>
-            <Text style={tw`text-red-500 font-bold text-xl`}>Logout</Text>
+        </View>
+        <View style={tw`p-4`}>
+          <View style={tw`flex flex-row items-center`}>
+            <LogoutSVG col={"text-red-500 w-6 h-6"} />
+            <Text style={tw`text-red-500 font-bold text-xl ml-2`}>Logout</Text>
           </View>
-          <View style={tw`h-4`} />
+          <View style={tw`h-8`} />
           <View style={tw` flex flex-row w-full justify-around`}>
             <Pressable
               onPress={toggleModal}
@@ -57,6 +70,8 @@ const LogoutModal = ({ toggleModal, isModalVisible, setModalVisible }) => {
           </View>
         </View>
       </View>
+
+      {/* </ScrollView> */}
     </Modal>
   );
 };

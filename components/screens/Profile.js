@@ -1,4 +1,11 @@
-import { View, Text, TextInput, SafeAreaView, Pressable } from "react-native";
+import {
+  View,
+  Text,
+  TextInput,
+  SafeAreaView,
+  Pressable,
+  Image,
+} from "react-native";
 import tw from "twrnc";
 import { LogoutSVG, EditPhoto } from "../../lib/listSvg";
 import { useMemo, useState } from "react";
@@ -9,6 +16,12 @@ const Profile = () => {
   const toggleModal = () => {
     setModalVisible(!isModalVisible);
   };
+
+  //   <Image
+  //   source={require("../../assets/blueblue.webp")}
+  //   style={tw`w-24 h-24 absolute rounded-full opacity-60 -right-8 -top-4`}
+  // />
+
   return (
     <SafeAreaView>
       <View style={tw`bg-white w-full h-full`}>
@@ -21,28 +34,30 @@ const Profile = () => {
               toggleModal={toggleModal}
             />
           );
-        })}
+        }, [isModalVisible])}
         <View
-          style={tw`bg-blue-500 w-full h-auto flex items-center justify-center py-4 overflow-hidden`}
+          style={tw`bg-blue-600 w-full h-auto flex items-center justify-center py-4 overflow-hidden`}
         >
-          <View
-            style={tw`bg-blue-400 w-10 h-10 absolute rounded-full right-0 bottom-4 shadow-sm`}
+          <Image
+            source={require("../../assets/blueblue.webp")}
+            style={tw`w-24 h-24 absolute rounded-full opacity-60 -left-10 bottom-4 `}
           />
+          <Image
+            source={require("../../assets/blueblue.webp")}
+            style={tw`w-20 h-20 absolute rounded-full opacity-60 -top-6 right-6 `}
+          />
+          <Image
+            source={require("../../assets/blueblue.webp")}
+            style={tw`w-10 h-10 absolute rounded-full opacity-60 right-0 bottom-4 `}
+          />
+
           <Pressable
             onPress={toggleModal}
-            style={tw`bg-red-400 w-10 h-10 absolute rounded-xl right-4 top-4 shadow-sm z-50 flex items-center justify-center`}
+            style={tw`bg-white w-10 h-10 absolute rounded-xl right-4 top-4 shadow-sm z-50 flex items-center justify-center`}
           >
-            <LogoutSVG col='text-white w-6 h-6' />
+            <LogoutSVG col='text-red-500 w-6 h-6 ' />
           </Pressable>
-          <View
-            style={tw`bg-blue-400 w-28 h-28 absolute rounded-full -left-4 -bottom-8 shadow-sm`}
-          />
-          <View
-            style={tw`bg-blue-400 w-20 h-20 absolute rounded-full left-10 -top-8 shadow-sm`}
-          />
-          <View
-            style={tw`bg-blue-400 w-10 h-10 absolute rounded-full right-4 -top-3 shadow-sm`}
-          />
+
           <View style={tw`flex flex-col items-center`}>
             <View
               style={tw`bg-white w-24 h-24 rounded-full shadow mb-2`}

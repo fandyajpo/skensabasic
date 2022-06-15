@@ -18,13 +18,13 @@ const Login = ({ navigation }) => {
   return (
     <SafeAreaView>
       <KeyboardAvoidingView
-        behavior='padding'
+        // behavior='padding'
         style={tw`w-full h-full flex flex-col justify-center items-center`}
       >
-        {/* <View style={tw`w-full absolute`}>
+        <View style={tw`w-full absolute `}>
           <Image source={require("../../assets/loginBackground.png")} />
-        </View> */}
-        <View style={tw`px-4 flex flex-col justify-center h-full w-full`}>
+        </View>
+        <View style={tw`px-4 flex flex-col justify-center h-full w-full z-20`}>
           <Text style={tw`font-bold text-blue-500 text-sm mb-2`}>Username</Text>
           <TextInput
             placeholder='Username'
@@ -51,12 +51,12 @@ const Login = ({ navigation }) => {
             </Pressable>
           </View>
         </View>
-        {/* <View style={tw`w-full absolute bottom-0`}>
+        <View style={tw`w-full absolute bottom-0`}>
           <Image
             source={require("../../assets/loginImage.png")}
             style={tw`w-full`}
           />
-        </View> */}
+        </View>
       </KeyboardAvoidingView>
     </SafeAreaView>
   );

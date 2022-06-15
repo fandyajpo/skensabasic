@@ -1,8 +1,14 @@
-import { View, Text, ScrollView, SafeAreaView } from "react-native";
+import {
+  View,
+  Text,
+  ScrollView,
+  SafeAreaView,
+  TouchableOpacity,
+} from "react-native";
 import tw from "twrnc";
-import Svg, { Path } from "react-native-svg";
+import { DownloadSVG, LinkSVG, PuzzleSVG } from "../../lib/listSvg";
 
-const Tugas = () => {
+export default function Tugas() {
   return (
     <SafeAreaView>
       <View style={tw`w-full h-full bg-white`}>
@@ -10,533 +16,466 @@ const Tugas = () => {
           <ScrollView>
             <View style={tw`h-full w-full bg-white p-2 `}>
               <View
-                style={tw`bg-white shadow-sm rounded-md w-full h-auto mb-2 p-2`}
+                style={tw`bg-white shadow-md rounded-md w-full h-auto py-4 px-2 mb-2 overflow-hidden border-l-2 border-blue-600`}
               >
-                <View
-                  style={tw`flex flex-row items-center w-full justify-between`}
-                >
+                <View>
                   <View>
-                    <View style={tw`mb-2`}>
-                      <Text style={tw`font-bold text-xs`}>Tugas</Text>
-                      <Text style={tw`font-semibold text-[#2E4F74] underline`}>
-                        Mengenai Resistor dan Kapasitor
-                      </Text>
+                    <Text style={tw`font-semibold text-sm text-gray-800`}>
+                      Tugas
+                    </Text>
+                    <View style={tw`flex flex-row w-full overflow-hidden`}>
+                      <View style={tw` p-2`}>
+                        <Text
+                          style={tw`text-xs  text-blue-800 py-0.5 font-bold`}
+                        >
+                          Mata Pelajaran
+                        </Text>
+                        <Text
+                          style={tw`text-xs  text-blue-800 py-0.5 font-bold`}
+                        >
+                          Materi Tentang
+                        </Text>
+                        <Text
+                          style={tw`text-xs  text-blue-800 py-0.5 font-bold`}
+                        >
+                          Nama Tugas
+                        </Text>
+                        <Text
+                          style={tw`text-xs  text-blue-800 py-0.5 font-bold`}
+                        >
+                          Batas Pengumpulan
+                        </Text>
+                      </View>
+                      <View style={tw`p-2`}>
+                        <Text
+                          style={tw`text-xs  text-gray-500 py-0.5 font-bold`}
+                        >
+                          :
+                        </Text>
+                        <Text
+                          style={tw`text-xs text-gray-500 py-0.5 font-bold`}
+                        >
+                          :
+                        </Text>
+                        <Text
+                          style={tw`text-xs text-gray-500 py-0.5 font-bold`}
+                        >
+                          :
+                        </Text>
+                        <Text
+                          style={tw`text-xs text-gray-500 py-0.5 font-bold`}
+                        >
+                          :
+                        </Text>
+                      </View>
+                      <View style={tw`w-3/4`}>
+                        <View
+                          style={tw`w-10/12 bg-gray-100 rounded-md p-2 shadow-sm`}
+                        >
+                          <Text
+                            style={tw`text-xs text-green-500 py-0.5 font-bold`}
+                          >
+                            Elektronika Industri
+                          </Text>
+                          <Text
+                            style={tw`text-xs text-green-500 py-0.5 font-bold`}
+                          >
+                            Alat Pengukur Arus Listrik
+                          </Text>
+                          <Text
+                            style={tw`text-xs text-green-500 underline py-0.5 font-bold`}
+                          >
+                            Apa ni namanya
+                          </Text>
+                          <Text
+                            style={tw`text-xs text-blue-800 py-0.5 font-bold`}
+                          >
+                            Senin, 5 Juni 2022
+                          </Text>
+                        </View>
+                      </View>
                     </View>
-                    <View style={tw`mb-2`}>
-                      <Text style={tw`font-bold text-xs`}>
-                        Batas Waktu Pengumpulan
-                      </Text>
-                      <Text style={tw`font-light text-[#2E4F74]`}>09.44</Text>
-                    </View>
-                  </View>
-                  <View style={tw`pr-3`}>
-                    <View style={tw`bg-blue-500/30 p-1 rounded-md`}>
-                      <Svg
-                        xmlns='http://www.w3.org/2000/svg'
-                        style={tw`w-6 h-6 text-blue-500`}
-                        viewBox='0 0 20 20'
-                        fill='currentColor'
+                    <View style={tw`flex items-end justify-end pt-4 `}>
+                      <TouchableOpacity
+                        style={tw`flex flex-row items-center bg-blue-600 rounded-full px-5 py-2`}
                       >
-                        <Path
-                          fillRule='evenodd'
-                          d='M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z'
-                          clipRule='evenodd'
-                        />
-                      </Svg>
+                        <Text style={tw`text-white font-bold text-xs pr-1`}>
+                          Link
+                        </Text>
+                        <LinkSVG col={"text-blue-200 h-4 w-4"} />
+                      </TouchableOpacity>
                     </View>
                   </View>
                 </View>
               </View>
               <View
-                style={tw`bg-white shadow-sm rounded-md w-full h-auto mb-2 p-2`}
+                style={tw`bg-white shadow-md rounded-md w-full h-auto py-4 px-2 mb-2 overflow-hidden border-l-2 border-blue-600`}
               >
-                <View
-                  style={tw`flex flex-row items-center w-full justify-between`}
-                >
+                <View>
                   <View>
-                    <View style={tw`mb-2`}>
-                      <Text style={tw`font-bold text-xs`}>Tugas</Text>
-                      <Text style={tw`font-semibold text-[#2E4F74] underline`}>
-                        Mengenai Resistor dan Kapasitor
-                      </Text>
+                    <Text style={tw`font-semibold text-sm text-gray-800`}>
+                      Tugas
+                    </Text>
+                    <View style={tw`flex flex-row w-full overflow-hidden`}>
+                      <View style={tw` p-2`}>
+                        <Text
+                          style={tw`text-xs  text-blue-800 py-0.5 font-bold`}
+                        >
+                          Mata Pelajaran
+                        </Text>
+                        <Text
+                          style={tw`text-xs  text-blue-800 py-0.5 font-bold`}
+                        >
+                          Materi Tentang
+                        </Text>
+                        <Text
+                          style={tw`text-xs  text-blue-800 py-0.5 font-bold`}
+                        >
+                          Nama Tugas
+                        </Text>
+                        <Text
+                          style={tw`text-xs  text-blue-800 py-0.5 font-bold`}
+                        >
+                          Batas Pengumpulan
+                        </Text>
+                      </View>
+                      <View style={tw`p-2`}>
+                        <Text
+                          style={tw`text-xs  text-gray-500 py-0.5 font-bold`}
+                        >
+                          :
+                        </Text>
+                        <Text
+                          style={tw`text-xs text-gray-500 py-0.5 font-bold`}
+                        >
+                          :
+                        </Text>
+                        <Text
+                          style={tw`text-xs text-gray-500 py-0.5 font-bold`}
+                        >
+                          :
+                        </Text>
+                        <Text
+                          style={tw`text-xs text-gray-500 py-0.5 font-bold`}
+                        >
+                          :
+                        </Text>
+                      </View>
+                      <View style={tw`w-3/4`}>
+                        <View
+                          style={tw`w-10/12 bg-gray-100 rounded-md p-2 shadow-sm`}
+                        >
+                          <Text
+                            style={tw`text-xs text-green-500 py-0.5 font-bold`}
+                          >
+                            Elektronika Industri
+                          </Text>
+                          <Text
+                            style={tw`text-xs text-green-500 py-0.5 font-bold`}
+                          >
+                            Alat Pengukur Arus Listrik
+                          </Text>
+                          <Text
+                            style={tw`text-xs text-green-500 underline py-0.5 font-bold`}
+                          >
+                            Apa ni namanya
+                          </Text>
+                          <Text
+                            style={tw`text-xs text-blue-800 py-0.5 font-bold`}
+                          >
+                            Senin, 5 Juni 2022
+                          </Text>
+                        </View>
+                      </View>
                     </View>
-                    <View style={tw`mb-2`}>
-                      <Text style={tw`font-bold text-xs`}>
-                        Batas Waktu Pengumpulan
-                      </Text>
-                      <Text style={tw`font-light text-[#2E4F74]`}>09.44</Text>
-                    </View>
-                  </View>
-                  <View style={tw`pr-3`}>
-                    <View style={tw`bg-blue-500/30 p-1 rounded-md`}>
-                      <Svg
-                        xmlns='http://www.w3.org/2000/svg'
-                        style={tw`w-6 h-6 text-blue-500`}
-                        viewBox='0 0 20 20'
-                        fill='currentColor'
+                    <View style={tw`flex items-end justify-end pt-4 `}>
+                      <TouchableOpacity
+                        style={tw`flex flex-row items-center bg-blue-600 rounded-full px-5 py-2`}
                       >
-                        <Path
-                          fillRule='evenodd'
-                          d='M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z'
-                          clipRule='evenodd'
-                        />
-                      </Svg>
+                        <Text style={tw`text-white font-bold text-xs pr-1`}>
+                          Link
+                        </Text>
+                        <LinkSVG col={"text-blue-200 h-4 w-4"} />
+                      </TouchableOpacity>
                     </View>
                   </View>
                 </View>
               </View>
               <View
-                style={tw`bg-white shadow-sm rounded-md w-full h-auto mb-2 p-2`}
+                style={tw`bg-white shadow-md rounded-md w-full h-auto py-4 px-2 mb-2 overflow-hidden border-l-2 border-blue-600`}
               >
-                <View
-                  style={tw`flex flex-row items-center w-full justify-between`}
-                >
+                <View>
                   <View>
-                    <View style={tw`mb-2`}>
-                      <Text style={tw`font-bold text-xs`}>Tugas</Text>
-                      <Text style={tw`font-semibold text-[#2E4F74] underline`}>
-                        Mengenai Resistor dan Kapasitor
-                      </Text>
+                    <Text style={tw`font-semibold text-sm text-gray-800`}>
+                      Tugas
+                    </Text>
+                    <View style={tw`flex flex-row w-full overflow-hidden`}>
+                      <View style={tw` p-2`}>
+                        <Text
+                          style={tw`text-xs  text-blue-800 py-0.5 font-bold`}
+                        >
+                          Mata Pelajaran
+                        </Text>
+                        <Text
+                          style={tw`text-xs  text-blue-800 py-0.5 font-bold`}
+                        >
+                          Materi Tentang
+                        </Text>
+                        <Text
+                          style={tw`text-xs  text-blue-800 py-0.5 font-bold`}
+                        >
+                          Nama Tugas
+                        </Text>
+                        <Text
+                          style={tw`text-xs  text-blue-800 py-0.5 font-bold`}
+                        >
+                          Batas Pengumpulan
+                        </Text>
+                      </View>
+                      <View style={tw`p-2`}>
+                        <Text
+                          style={tw`text-xs  text-gray-500 py-0.5 font-bold`}
+                        >
+                          :
+                        </Text>
+                        <Text
+                          style={tw`text-xs text-gray-500 py-0.5 font-bold`}
+                        >
+                          :
+                        </Text>
+                        <Text
+                          style={tw`text-xs text-gray-500 py-0.5 font-bold`}
+                        >
+                          :
+                        </Text>
+                        <Text
+                          style={tw`text-xs text-gray-500 py-0.5 font-bold`}
+                        >
+                          :
+                        </Text>
+                      </View>
+                      <View style={tw`w-3/4`}>
+                        <View
+                          style={tw`w-10/12 bg-gray-100 rounded-md p-2 shadow-sm`}
+                        >
+                          <Text
+                            style={tw`text-xs text-green-500 py-0.5 font-bold`}
+                          >
+                            Elektronika Industri
+                          </Text>
+                          <Text
+                            style={tw`text-xs text-green-500 py-0.5 font-bold`}
+                          >
+                            Alat Pengukur Arus Listrik
+                          </Text>
+                          <Text
+                            style={tw`text-xs text-green-500 underline py-0.5 font-bold`}
+                          >
+                            Apa ni namanya
+                          </Text>
+                          <Text
+                            style={tw`text-xs text-blue-800 py-0.5 font-bold`}
+                          >
+                            Senin, 5 Juni 2022
+                          </Text>
+                        </View>
+                      </View>
                     </View>
-                    <View style={tw`mb-2`}>
-                      <Text style={tw`font-bold text-xs`}>
-                        Batas Waktu Pengumpulan
-                      </Text>
-                      <Text style={tw`font-light text-[#2E4F74]`}>09.44</Text>
-                    </View>
-                  </View>
-                  <View style={tw`pr-3`}>
-                    <View style={tw`bg-blue-500/30 p-1 rounded-md`}>
-                      <Svg
-                        xmlns='http://www.w3.org/2000/svg'
-                        style={tw`w-6 h-6 text-blue-500`}
-                        viewBox='0 0 20 20'
-                        fill='currentColor'
+                    <View style={tw`flex items-end justify-end pt-4 `}>
+                      <TouchableOpacity
+                        style={tw`flex flex-row items-center bg-blue-600 rounded-full px-5 py-2`}
                       >
-                        <Path
-                          fillRule='evenodd'
-                          d='M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z'
-                          clipRule='evenodd'
-                        />
-                      </Svg>
+                        <Text style={tw`text-white font-bold text-xs pr-1`}>
+                          Link
+                        </Text>
+                        <LinkSVG col={"text-blue-200 h-4 w-4"} />
+                      </TouchableOpacity>
                     </View>
                   </View>
                 </View>
               </View>
               <View
-                style={tw`bg-white shadow-sm rounded-md w-full h-auto mb-2 p-2`}
+                style={tw`bg-white shadow-md rounded-md w-full h-auto py-4 px-2 mb-2 overflow-hidden border-l-2 border-blue-600`}
               >
-                <View
-                  style={tw`flex flex-row items-center w-full justify-between`}
-                >
+                <View>
                   <View>
-                    <View style={tw`mb-2`}>
-                      <Text style={tw`font-bold text-xs`}>Tugas</Text>
-                      <Text style={tw`font-semibold text-[#2E4F74] underline`}>
-                        Mengenai Resistor dan Kapasitor
-                      </Text>
+                    <Text style={tw`font-semibold text-sm text-gray-800`}>
+                      Tugas
+                    </Text>
+                    <View style={tw`flex flex-row w-full overflow-hidden`}>
+                      <View style={tw` p-2`}>
+                        <Text
+                          style={tw`text-xs  text-blue-800 py-0.5 font-bold`}
+                        >
+                          Mata Pelajaran
+                        </Text>
+                        <Text
+                          style={tw`text-xs  text-blue-800 py-0.5 font-bold`}
+                        >
+                          Materi Tentang
+                        </Text>
+                        <Text
+                          style={tw`text-xs  text-blue-800 py-0.5 font-bold`}
+                        >
+                          Nama Tugas
+                        </Text>
+                        <Text
+                          style={tw`text-xs  text-blue-800 py-0.5 font-bold`}
+                        >
+                          Batas Pengumpulan
+                        </Text>
+                      </View>
+                      <View style={tw`p-2`}>
+                        <Text
+                          style={tw`text-xs  text-gray-500 py-0.5 font-bold`}
+                        >
+                          :
+                        </Text>
+                        <Text
+                          style={tw`text-xs text-gray-500 py-0.5 font-bold`}
+                        >
+                          :
+                        </Text>
+                        <Text
+                          style={tw`text-xs text-gray-500 py-0.5 font-bold`}
+                        >
+                          :
+                        </Text>
+                        <Text
+                          style={tw`text-xs text-gray-500 py-0.5 font-bold`}
+                        >
+                          :
+                        </Text>
+                      </View>
+                      <View style={tw`w-3/4`}>
+                        <View
+                          style={tw`w-10/12 bg-gray-100 rounded-md p-2 shadow-sm`}
+                        >
+                          <Text
+                            style={tw`text-xs text-green-500 py-0.5 font-bold`}
+                          >
+                            Elektronika Industri
+                          </Text>
+                          <Text
+                            style={tw`text-xs text-green-500 py-0.5 font-bold`}
+                          >
+                            Alat Pengukur Arus Listrik
+                          </Text>
+                          <Text
+                            style={tw`text-xs text-green-500 underline py-0.5 font-bold`}
+                          >
+                            Apa ni namanya
+                          </Text>
+                          <Text
+                            style={tw`text-xs text-blue-800 py-0.5 font-bold`}
+                          >
+                            Senin, 5 Juni 2022
+                          </Text>
+                        </View>
+                      </View>
                     </View>
-                    <View style={tw`mb-2`}>
-                      <Text style={tw`font-bold text-xs`}>
-                        Batas Waktu Pengumpulan
-                      </Text>
-                      <Text style={tw`font-light text-[#2E4F74]`}>09.44</Text>
-                    </View>
-                  </View>
-                  <View style={tw`pr-3`}>
-                    <View style={tw`bg-blue-500/30 p-1 rounded-md`}>
-                      <Svg
-                        xmlns='http://www.w3.org/2000/svg'
-                        style={tw`w-6 h-6 text-blue-500`}
-                        viewBox='0 0 20 20'
-                        fill='currentColor'
+                    <View style={tw`flex items-end justify-end pt-4 `}>
+                      <TouchableOpacity
+                        style={tw`flex flex-row items-center bg-blue-600 rounded-full px-5 py-2`}
                       >
-                        <Path
-                          fillRule='evenodd'
-                          d='M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z'
-                          clipRule='evenodd'
-                        />
-                      </Svg>
+                        <Text style={tw`text-white font-bold text-xs pr-1`}>
+                          Link
+                        </Text>
+                        <LinkSVG col={"text-blue-200 h-4 w-4"} />
+                      </TouchableOpacity>
                     </View>
                   </View>
                 </View>
               </View>
               <View
-                style={tw`bg-white shadow-sm rounded-md w-full h-auto mb-2 p-2`}
+                style={tw`bg-white shadow-md rounded-md w-full h-auto py-4 px-2 mb-2 overflow-hidden border-l-2 border-blue-600`}
               >
-                <View
-                  style={tw`flex flex-row items-center w-full justify-between`}
-                >
+                <View>
                   <View>
-                    <View style={tw`mb-2`}>
-                      <Text style={tw`font-bold text-xs`}>Tugas</Text>
-                      <Text style={tw`font-semibold text-[#2E4F74] underline`}>
-                        Mengenai Resistor dan Kapasitor
-                      </Text>
+                    <Text style={tw`font-semibold text-sm text-gray-800`}>
+                      Tugas
+                    </Text>
+                    <View style={tw`flex flex-row w-full overflow-hidden`}>
+                      <View style={tw` p-2`}>
+                        <Text
+                          style={tw`text-xs  text-blue-800 py-0.5 font-bold`}
+                        >
+                          Mata Pelajaran
+                        </Text>
+                        <Text
+                          style={tw`text-xs  text-blue-800 py-0.5 font-bold`}
+                        >
+                          Materi Tentang
+                        </Text>
+                        <Text
+                          style={tw`text-xs  text-blue-800 py-0.5 font-bold`}
+                        >
+                          Nama Tugas
+                        </Text>
+                        <Text
+                          style={tw`text-xs  text-blue-800 py-0.5 font-bold`}
+                        >
+                          Batas Pengumpulan
+                        </Text>
+                      </View>
+                      <View style={tw`p-2`}>
+                        <Text
+                          style={tw`text-xs  text-gray-500 py-0.5 font-bold`}
+                        >
+                          :
+                        </Text>
+                        <Text
+                          style={tw`text-xs text-gray-500 py-0.5 font-bold`}
+                        >
+                          :
+                        </Text>
+                        <Text
+                          style={tw`text-xs text-gray-500 py-0.5 font-bold`}
+                        >
+                          :
+                        </Text>
+                        <Text
+                          style={tw`text-xs text-gray-500 py-0.5 font-bold`}
+                        >
+                          :
+                        </Text>
+                      </View>
+                      <View style={tw`w-3/4`}>
+                        <View
+                          style={tw`w-10/12 bg-gray-100 rounded-md p-2 shadow-sm`}
+                        >
+                          <Text
+                            style={tw`text-xs text-green-500 py-0.5 font-bold`}
+                          >
+                            Elektronika Industri
+                          </Text>
+                          <Text
+                            style={tw`text-xs text-green-500 py-0.5 font-bold`}
+                          >
+                            Alat Pengukur Arus Listrik
+                          </Text>
+                          <Text
+                            style={tw`text-xs text-green-500 underline py-0.5 font-bold`}
+                          >
+                            Apa ni namanya
+                          </Text>
+                          <Text
+                            style={tw`text-xs text-blue-800 py-0.5 font-bold`}
+                          >
+                            Senin, 5 Juni 2022
+                          </Text>
+                        </View>
+                      </View>
                     </View>
-                    <View style={tw`mb-2`}>
-                      <Text style={tw`font-bold text-xs`}>
-                        Batas Waktu Pengumpulan
-                      </Text>
-                      <Text style={tw`font-light text-[#2E4F74]`}>09.44</Text>
-                    </View>
-                  </View>
-                  <View style={tw`pr-3`}>
-                    <View style={tw`bg-blue-500/30 p-1 rounded-md`}>
-                      <Svg
-                        xmlns='http://www.w3.org/2000/svg'
-                        style={tw`w-6 h-6 text-blue-500`}
-                        viewBox='0 0 20 20'
-                        fill='currentColor'
+                    <View style={tw`flex items-end justify-end pt-4 `}>
+                      <TouchableOpacity
+                        style={tw`flex flex-row items-center bg-blue-600 rounded-full px-5 py-2`}
                       >
-                        <Path
-                          fillRule='evenodd'
-                          d='M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z'
-                          clipRule='evenodd'
-                        />
-                      </Svg>
-                    </View>
-                  </View>
-                </View>
-              </View>
-              <View
-                style={tw`bg-white shadow-sm rounded-md w-full h-auto mb-2 p-2`}
-              >
-                <View
-                  style={tw`flex flex-row items-center w-full justify-between`}
-                >
-                  <View>
-                    <View style={tw`mb-2`}>
-                      <Text style={tw`font-bold text-xs`}>Tugas</Text>
-                      <Text style={tw`font-semibold text-[#2E4F74] underline`}>
-                        Mengenai Resistor dan Kapasitor
-                      </Text>
-                    </View>
-                    <View style={tw`mb-2`}>
-                      <Text style={tw`font-bold text-xs`}>
-                        Batas Waktu Pengumpulan
-                      </Text>
-                      <Text style={tw`font-light text-[#2E4F74]`}>09.44</Text>
-                    </View>
-                  </View>
-                  <View style={tw`pr-3`}>
-                    <View style={tw`bg-blue-500/30 p-1 rounded-md`}>
-                      <Svg
-                        xmlns='http://www.w3.org/2000/svg'
-                        style={tw`w-6 h-6 text-blue-500`}
-                        viewBox='0 0 20 20'
-                        fill='currentColor'
-                      >
-                        <Path
-                          fillRule='evenodd'
-                          d='M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z'
-                          clipRule='evenodd'
-                        />
-                      </Svg>
-                    </View>
-                  </View>
-                </View>
-              </View>
-              <View
-                style={tw`bg-white shadow-sm rounded-md w-full h-auto mb-2 p-2`}
-              >
-                <View
-                  style={tw`flex flex-row items-center w-full justify-between`}
-                >
-                  <View>
-                    <View style={tw`mb-2`}>
-                      <Text style={tw`font-bold text-xs`}>Tugas</Text>
-                      <Text style={tw`font-semibold text-[#2E4F74] underline`}>
-                        Mengenai Resistor dan Kapasitor
-                      </Text>
-                    </View>
-                    <View style={tw`mb-2`}>
-                      <Text style={tw`font-bold text-xs`}>
-                        Batas Waktu Pengumpulan
-                      </Text>
-                      <Text style={tw`font-light text-[#2E4F74]`}>09.44</Text>
-                    </View>
-                  </View>
-                  <View style={tw`pr-3`}>
-                    <View style={tw`bg-blue-500/30 p-1 rounded-md`}>
-                      <Svg
-                        xmlns='http://www.w3.org/2000/svg'
-                        style={tw`w-6 h-6 text-blue-500`}
-                        viewBox='0 0 20 20'
-                        fill='currentColor'
-                      >
-                        <Path
-                          fillRule='evenodd'
-                          d='M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z'
-                          clipRule='evenodd'
-                        />
-                      </Svg>
-                    </View>
-                  </View>
-                </View>
-              </View>
-              <View
-                style={tw`bg-white shadow-sm rounded-md w-full h-auto mb-2 p-2`}
-              >
-                <View
-                  style={tw`flex flex-row items-center w-full justify-between`}
-                >
-                  <View>
-                    <View style={tw`mb-2`}>
-                      <Text style={tw`font-bold text-xs`}>Tugas</Text>
-                      <Text style={tw`font-semibold text-[#2E4F74] underline`}>
-                        Mengenai Resistor dan Kapasitor
-                      </Text>
-                    </View>
-                    <View style={tw`mb-2`}>
-                      <Text style={tw`font-bold text-xs`}>
-                        Batas Waktu Pengumpulan
-                      </Text>
-                      <Text style={tw`font-light text-[#2E4F74]`}>09.44</Text>
-                    </View>
-                  </View>
-                  <View style={tw`pr-3`}>
-                    <View style={tw`bg-blue-500/30 p-1 rounded-md`}>
-                      <Svg
-                        xmlns='http://www.w3.org/2000/svg'
-                        style={tw`w-6 h-6 text-blue-500`}
-                        viewBox='0 0 20 20'
-                        fill='currentColor'
-                      >
-                        <Path
-                          fillRule='evenodd'
-                          d='M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z'
-                          clipRule='evenodd'
-                        />
-                      </Svg>
-                    </View>
-                  </View>
-                </View>
-              </View>
-              <View
-                style={tw`bg-white shadow-sm rounded-md w-full h-auto mb-2 p-2`}
-              >
-                <View
-                  style={tw`flex flex-row items-center w-full justify-between`}
-                >
-                  <View>
-                    <View style={tw`mb-2`}>
-                      <Text style={tw`font-bold text-xs`}>Tugas</Text>
-                      <Text style={tw`font-semibold text-[#2E4F74] underline`}>
-                        Mengenai Resistor dan Kapasitor
-                      </Text>
-                    </View>
-                    <View style={tw`mb-2`}>
-                      <Text style={tw`font-bold text-xs`}>
-                        Batas Waktu Pengumpulan
-                      </Text>
-                      <Text style={tw`font-light text-[#2E4F74]`}>09.44</Text>
-                    </View>
-                  </View>
-                  <View style={tw`pr-3`}>
-                    <View style={tw`bg-blue-500/30 p-1 rounded-md`}>
-                      <Svg
-                        xmlns='http://www.w3.org/2000/svg'
-                        style={tw`w-6 h-6 text-blue-500`}
-                        viewBox='0 0 20 20'
-                        fill='currentColor'
-                      >
-                        <Path
-                          fillRule='evenodd'
-                          d='M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z'
-                          clipRule='evenodd'
-                        />
-                      </Svg>
-                    </View>
-                  </View>
-                </View>
-              </View>
-              <View
-                style={tw`bg-white shadow-sm rounded-md w-full h-auto mb-2 p-2`}
-              >
-                <View
-                  style={tw`flex flex-row items-center w-full justify-between`}
-                >
-                  <View>
-                    <View style={tw`mb-2`}>
-                      <Text style={tw`font-bold text-xs`}>Tugas</Text>
-                      <Text style={tw`font-semibold text-[#2E4F74] underline`}>
-                        Mengenai Resistor dan Kapasitor
-                      </Text>
-                    </View>
-                    <View style={tw`mb-2`}>
-                      <Text style={tw`font-bold text-xs`}>
-                        Batas Waktu Pengumpulan
-                      </Text>
-                      <Text style={tw`font-light text-[#2E4F74]`}>09.44</Text>
-                    </View>
-                  </View>
-                  <View style={tw`pr-3`}>
-                    <View style={tw`bg-blue-500/30 p-1 rounded-md`}>
-                      <Svg
-                        xmlns='http://www.w3.org/2000/svg'
-                        style={tw`w-6 h-6 text-blue-500`}
-                        viewBox='0 0 20 20'
-                        fill='currentColor'
-                      >
-                        <Path
-                          fillRule='evenodd'
-                          d='M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z'
-                          clipRule='evenodd'
-                        />
-                      </Svg>
-                    </View>
-                  </View>
-                </View>
-              </View>
-              <View
-                style={tw`bg-white shadow-sm rounded-md w-full h-auto mb-2 p-2`}
-              >
-                <View
-                  style={tw`flex flex-row items-center w-full justify-between`}
-                >
-                  <View>
-                    <View style={tw`mb-2`}>
-                      <Text style={tw`font-bold text-xs`}>Tugas</Text>
-                      <Text style={tw`font-semibold text-[#2E4F74] underline`}>
-                        Mengenai Resistor dan Kapasitor
-                      </Text>
-                    </View>
-                    <View style={tw`mb-2`}>
-                      <Text style={tw`font-bold text-xs`}>
-                        Batas Waktu Pengumpulan
-                      </Text>
-                      <Text style={tw`font-light text-[#2E4F74]`}>09.44</Text>
-                    </View>
-                  </View>
-                  <View style={tw`pr-3`}>
-                    <View style={tw`bg-blue-500/30 p-1 rounded-md`}>
-                      <Svg
-                        xmlns='http://www.w3.org/2000/svg'
-                        style={tw`w-6 h-6 text-blue-500`}
-                        viewBox='0 0 20 20'
-                        fill='currentColor'
-                      >
-                        <Path
-                          fillRule='evenodd'
-                          d='M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z'
-                          clipRule='evenodd'
-                        />
-                      </Svg>
-                    </View>
-                  </View>
-                </View>
-              </View>
-              <View
-                style={tw`bg-white shadow-sm rounded-md w-full h-auto mb-2 p-2`}
-              >
-                <View
-                  style={tw`flex flex-row items-center w-full justify-between`}
-                >
-                  <View>
-                    <View style={tw`mb-2`}>
-                      <Text style={tw`font-bold text-xs`}>Tugas</Text>
-                      <Text style={tw`font-semibold text-[#2E4F74] underline`}>
-                        Mengenai Resistor dan Kapasitor
-                      </Text>
-                    </View>
-                    <View style={tw`mb-2`}>
-                      <Text style={tw`font-bold text-xs`}>
-                        Batas Waktu Pengumpulan
-                      </Text>
-                      <Text style={tw`font-light text-[#2E4F74]`}>09.44</Text>
-                    </View>
-                  </View>
-                  <View style={tw`pr-3`}>
-                    <View style={tw`bg-blue-500/30 p-1 rounded-md`}>
-                      <Svg
-                        xmlns='http://www.w3.org/2000/svg'
-                        style={tw`w-6 h-6 text-blue-500`}
-                        viewBox='0 0 20 20'
-                        fill='currentColor'
-                      >
-                        <Path
-                          fillRule='evenodd'
-                          d='M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z'
-                          clipRule='evenodd'
-                        />
-                      </Svg>
-                    </View>
-                  </View>
-                </View>
-              </View>
-              <View
-                style={tw`bg-white shadow-sm rounded-md w-full h-auto mb-2 p-2`}
-              >
-                <View
-                  style={tw`flex flex-row items-center w-full justify-between`}
-                >
-                  <View>
-                    <View style={tw`mb-2`}>
-                      <Text style={tw`font-bold text-xs`}>Tugas</Text>
-                      <Text style={tw`font-semibold text-[#2E4F74] underline`}>
-                        Mengenai Resistor dan Kapasitor
-                      </Text>
-                    </View>
-                    <View style={tw`mb-2`}>
-                      <Text style={tw`font-bold text-xs`}>
-                        Batas Waktu Pengumpulan
-                      </Text>
-                      <Text style={tw`font-light text-[#2E4F74]`}>09.44</Text>
-                    </View>
-                  </View>
-                  <View style={tw`pr-3`}>
-                    <View style={tw`bg-blue-500/30 p-1 rounded-md`}>
-                      <Svg
-                        xmlns='http://www.w3.org/2000/svg'
-                        style={tw`w-6 h-6 text-blue-500`}
-                        viewBox='0 0 20 20'
-                        fill='currentColor'
-                      >
-                        <Path
-                          fillRule='evenodd'
-                          d='M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z'
-                          clipRule='evenodd'
-                        />
-                      </Svg>
-                    </View>
-                  </View>
-                </View>
-              </View>
-              <View
-                style={tw`bg-white shadow-sm rounded-md w-full h-auto mb-2 p-2`}
-              >
-                <View
-                  style={tw`flex flex-row items-center w-full justify-between`}
-                >
-                  <View>
-                    <View style={tw`mb-2`}>
-                      <Text style={tw`font-bold text-xs`}>Tugas</Text>
-                      <Text style={tw`font-semibold text-[#2E4F74] underline`}>
-                        Mengenai Resistor dan Kapasitor
-                      </Text>
-                    </View>
-                    <View style={tw`mb-2`}>
-                      <Text style={tw`font-bold text-xs`}>
-                        Batas Waktu Pengumpulan
-                      </Text>
-                      <Text style={tw`font-light text-[#2E4F74]`}>09.44</Text>
-                    </View>
-                  </View>
-                  <View style={tw`pr-3`}>
-                    <View style={tw`bg-blue-500/30 p-1 rounded-md`}>
-                      <Svg
-                        xmlns='http://www.w3.org/2000/svg'
-                        style={tw`w-6 h-6 text-blue-500`}
-                        viewBox='0 0 20 20'
-                        fill='currentColor'
-                      >
-                        <Path
-                          fillRule='evenodd'
-                          d='M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z'
-                          clipRule='evenodd'
-                        />
-                      </Svg>
+                        <Text style={tw`text-white font-bold text-xs pr-1`}>
+                          Link
+                        </Text>
+                        <LinkSVG col={"text-blue-200 h-4 w-4"} />
+                      </TouchableOpacity>
                     </View>
                   </View>
                 </View>
@@ -547,6 +486,4 @@ const Tugas = () => {
       </View>
     </SafeAreaView>
   );
-};
-
-export default Tugas;
+}
