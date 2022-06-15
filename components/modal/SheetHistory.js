@@ -24,9 +24,9 @@ const SheetHistory = () => {
       //   onSwipeThreshold={0}
       onSwipeComplete={async ({ swipingDirection }) => {
         if (swipingDirection === "up") {
-          await act.setSheet("sheetHistory");
+          act.setSheet("sheetHistory");
         } else if (swipingDirection === "down") {
-          await act.setSheet("");
+          act.setSheet("");
         }
       }}
       useNativeDriverForBackdrop={true}

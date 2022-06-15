@@ -24,9 +24,9 @@ const SheetTugas = () => {
       //   onSwipeThreshold={0}
       onSwipeComplete={async ({ swipingDirection }) => {
         if (swipingDirection === "up") {
-          await act.setSheet("sheetTugas");
+          act.setSheet("sheetTugas");
         } else if (swipingDirection === "down") {
-          await act.setSheet("");
+          act.setSheet("");
         }
       }}
       useNativeDriverForBackdrop={true}
