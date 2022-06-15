@@ -17,7 +17,7 @@ const PresensiCard = () => {
           style={tw`w-full rounded-md p-4 flex flex-row items-center justify-between`}
         >
           <View
-            style={tw`bg-gray-100/50 border border-blue-200 p-2 w-2/4 rounded-md`}
+            style={tw`bg-gray-100/50 border border-blue-200 p-2 w-5/6 rounded-md`}
           >
             <Text style={tw`text-white font-bold text-lg`}>Presensi</Text>
             <View>

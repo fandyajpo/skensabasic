@@ -16,7 +16,10 @@ import {
   MenuSVG,
   MenusSVG,
 } from "../../lib/listSvg";
+import { GlobalContext } from "../../context/global";
+import { useContext } from "react";
 const ActionCategory = ({ sheetKehadiran, setSheetKehadiran }) => {
+  const { act, ctx } = useContext(GlobalContext);
   const navigation = useNavigation();
   return (
     <View style={tw`w-full px-2 pb-2`}>
@@ -30,7 +33,7 @@ const ActionCategory = ({ sheetKehadiran, setSheetKehadiran }) => {
         <View style={tw`p-4 flex flex-row justify-around w-full h-auto`}>
           <View style={tw`flex items-center`}>
             <TouchableOpacity
-              onPress={() => setSheetKehadiran(true)}
+              onPress={() => act.setSheet("sheetKehadiran")}
               style={tw`bg-white w-14 h-14 rounded-2xl shadow-sm mb-1 flex items-center justify-center`}
             >
               <Chart col={"text-blue-500 w-8 h-8"} />

@@ -1,75 +1,66 @@
-import React, { useCallback, useMemo, useRef } from "react";
-import { View, Text, StyleSheet, Button } from "react-native";
 import tw from "twrnc";
-import { Portal } from "@gorhom/portal";
-import { useEffect } from "react";
-import BottomSheet, { BottomSheetBackdrop } from "@gorhom/bottom-sheet";
+import {
+  Text,
+  View,
+  Button,
+  Pressable,
+  Image,
+  ScrollView,
+  TouchableOpacity,
+} from "react-native";
+import Modal from "react-native-modal";
+import { GlobalContext } from "../../context/global";
+import { useContext } from "react";
 import Chart from "../chart/chart";
 
-export default function Sheet({ sheetKehadiran, setSheetKehadiran }) {
-  // ref
-  const bottomSheetRef = useRef(null);
+const SheetHistory = () => {
+  const { act, ctx } = useContext(GlobalContext);
 
-  // variables
-  const snapPoints = useMemo(() => ["25%", "50%"], []);
-  // callbacks
-  const handleSheetChanges = useCallback((index) => {
-    console.log("handleSheetChanges", index);
-  }, []);
-
-  // const Close = () => {
-  //   bottomSheetRef?.current?.close();
-  // };
-  // const Open = () => {
-  //   bottomSheetRef?.current?.snapToIndex(1);
-  // };
-
-  useEffect(() => {
-    sheetKehadiran
-      ? bottomSheetRef?.current?.snapToIndex(1)
-      : bottomSheetRef?.current?.close();
-  }, [sheetKehadiran]);
-
-  const renderBackdrop = useCallback(
-    (props) => (
-      <BottomSheetBackdrop
-        {...props}
-        enableTouchThrough={true}
-        // disappearsOnIndex={0}
-        // appearsOnIndex={4}
-        // pressBehavior={"close"}
-        opacity={0.5}
-      />
-    ),
-    []
-  );
-
-  // renders
   return (
-    <>
-      <Portal>
-        <BottomSheet
-          ref={bottomSheetRef}
-          index={-1}
-          enableContentPanningGesture={true}
-          enableHandlePanningGesture={true}
-          enableOverDrag={true}
-          animateOnMount={true}
-          backdropComponent={renderBackdrop}
-          snapPoints={snapPoints}
-          onChange={handleSheetChanges}
+    <Modal
+      scrollHorizontal={true}
+      style={tw`m-0`}
+      coverScreen={true}
+      //   onSwipeThreshold={0}
+      onSwipeComplete={async ({ swipingDirection }) => {
+        if (swipingDirection === "up") {
+          act.setSheet("sheetKehadiran");
+        } else if (swipingDirection === "down") {
+          act.setSheet("");
+        }
+      }}
+      useNativeDriverForBackdrop={true}
+      swipeDirection={["down"]}
+      propagateSwipe={true}
+      isVisible={ctx.sheet === "sheetKehadiran" ? true : false}
+      onBackButtonPress={() => act.setSheet("")}
+      onBackdropPress={() => act.setSheet("")}
+      backdropColor={"black"}
+    >
+      <View
+        style={tw`bg-white w-full h-80 absolute bottom-0 rounded-t-xl overflow-hidden`}
+      >
+        <View
+          style={tw`w-full bg-gray-200 h-8 flex items-center justify-center`}
         >
           <View
-            style={{
-              flex: 1,
-              alignItems: "center",
-            }}
-          >
-            <Text onPress={() => setSheetKehadiran(false)}>Click to close</Text>
-            <Chart />
-          </View>
-        </BottomSheet>
-      </Portal>
-    </>
+            style={tw`bg-gray-500 h-1 w-44 rounded-full items-center justify-center`}
+          ></View>
+        </View>
+        {/* <ScrollView>
+          <Pressable>
+            <TouchableOpacity style={tw`bg-white  overflow-hidden w-full p-4`}>
+              <Text>Absensi</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={tw`bg-white  overflow-hidden w-full p-4`}>
+              <Text>Pembayaran</Text>
+            </TouchableOpacity>
+          </Pressable>
+        </ScrollView> */}
+        <Chart />
+      </View>
+    </Modal>
   );
-}
+};
+
+export default SheetHistory;

@@ -5,6 +5,7 @@ import {
   SafeAreaView,
   Pressable,
   Image,
+  ImageBackground,
 } from "react-native";
 import tw from "twrnc";
 import { LogoutSVG, EditPhoto } from "../../lib/listSvg";
@@ -84,115 +85,135 @@ const Profile = () => {
           return (
             <View style={tw`px-2`}>
               <View style={tw`rounded-md flex flex-col`}>
-                <View
-                  style={tw`w-full shadow-md bg-white p-2 rounded-md border border-gray-200`}
+                <ImageBackground
+                  source={require("../../assets/blueblue.webp")}
+                  style={tw`p-2 rounded-md overflow-hidden`}
                 >
-                  <View style={tw`flex flex-row items-center`}>
-                    <Text style={tw`text-[#2E4F74] font-bold text-sm w-2/4`}>
-                      Nama Depan
-                    </Text>
-                    <TextInput
-                      style={tw`text-gray-700 text-sm `}
-                      value={"Fandy"}
-                      editable={false}
-                    ></TextInput>
+                  <View
+                    style={tw`w-full shadow-md bg-white p-2 rounded-md border border-gray-200`}
+                  >
+                    <View style={tw`flex flex-row items-center`}>
+                      <Text style={tw`text-[#2E4F74] font-bold text-sm w-2/4`}>
+                        Nama Depan
+                      </Text>
+                      <TextInput
+                        style={tw`text-gray-500 font-bold text-sm `}
+                        value={"Fandy"}
+                        editable={false}
+                      ></TextInput>
+                    </View>
+                    <View style={tw`flex flex-row items-center`}>
+                      <Text style={tw`text-[#2E4F74] font-bold text-sm w-2/4`}>
+                        Nama Belakang
+                      </Text>
+                      <TextInput
+                        style={tw`text-gray-500 font-bold text-sm `}
+                        value={"Ahmad Januar Pratama"}
+                        editable={false}
+                      ></TextInput>
+                    </View>
+                    <View style={tw`flex flex-row items-center`}>
+                      <Text style={tw`text-[#2E4F74] font-bold text-sm w-2/4`}>
+                        Tempat Lahir
+                      </Text>
+                      <TextInput
+                        style={tw`text-gray-500 font-bold text-sm `}
+                        value={"Pantai"}
+                        editable={false}
+                      ></TextInput>
+                    </View>
+                    <View style={tw`flex flex-row items-center`}>
+                      <Text style={tw`text-[#2E4F74] font-bold text-sm w-2/4`}>
+                        Tanggal Lahir
+                      </Text>
+                      <TextInput
+                        style={tw`text-gray-500 font-bold text-sm `}
+                        value={"29"}
+                        editable={false}
+                      ></TextInput>
+                    </View>
+                    <View style={tw`flex flex-row items-center`}>
+                      <Text style={tw`text-[#2E4F74] font-bold text-sm w-2/4`}>
+                        Agama
+                      </Text>
+                      <TextInput
+                        style={tw`text-gray-500 font-bold text-sm `}
+                        value={"Islam"}
+                        editable={false}
+                      ></TextInput>
+                    </View>
+                    <View style={tw`flex flex-row items-center`}>
+                      <Text style={tw`text-[#2E4F74] font-bold text-sm w-2/4`}>
+                        NIS
+                      </Text>
+                      <TextInput
+                        style={tw`text-gray-500 font-bold text-sm `}
+                        value={"3428432748782374239"}
+                        editable={false}
+                      ></TextInput>
+                    </View>
                   </View>
-                  <View style={tw`flex flex-row items-center`}>
-                    <Text style={tw`text-[#2E4F74] font-bold text-sm w-2/4`}>
-                      Nama Belakang
-                    </Text>
-                    <TextInput
-                      style={tw`text-gray-700 text-sm `}
-                      value={"Ahmad Januar Pratama"}
-                      editable={false}
-                    ></TextInput>
-                  </View>
-                  <View style={tw`flex flex-row items-center`}>
-                    <Text style={tw`text-[#2E4F74] font-bold text-sm w-2/4`}>
-                      Tempat Lahir
-                    </Text>
-                    <TextInput
-                      style={tw`text-gray-700 text-sm `}
-                      value={"Pantai"}
-                      editable={false}
-                    ></TextInput>
-                  </View>
-                  <View style={tw`flex flex-row items-center`}>
-                    <Text style={tw`text-[#2E4F74] font-bold text-sm w-2/4`}>
-                      Tanggal Lahir
-                    </Text>
-                    <TextInput
-                      style={tw`text-gray-700 text-sm `}
-                      value={"29"}
-                      editable={false}
-                    ></TextInput>
-                  </View>
-                  <View style={tw`flex flex-row items-center`}>
-                    <Text style={tw`text-[#2E4F74] font-bold text-sm w-2/4`}>
-                      Agama
-                    </Text>
-                    <TextInput
-                      style={tw`text-gray-700 text-sm `}
-                      value={"Islam"}
-                      editable={false}
-                    ></TextInput>
-                  </View>
-                </View>
+                </ImageBackground>
                 <View style={tw`h-4`} />
-                <View
-                  style={tw`w-full shadow-md bg-white p-2 rounded-md border border-gray-200`}
+                <ImageBackground
+                  source={require("../../assets/blueblue.webp")}
+                  style={tw`p-2 rounded-md overflow-hidden`}
                 >
-                  <View style={tw`flex flex-row items-center`}>
-                    <Text style={tw`text-[#2E4F74] font-bold text-sm w-2/4`}>
-                      Nomor Telepon / Hp
-                    </Text>
-                    <TextInput
-                      style={tw`text-gray-700 text-sm `}
-                      value={"9048948203194"}
-                      editable={false}
-                    />
+                  <View
+                    style={tw`w-full shadow-md bg-white p-2 rounded-md border border-gray-200`}
+                  >
+                    <View style={tw`flex flex-row items-center`}>
+                      <Text style={tw`text-[#2E4F74] font-bold text-sm w-2/4`}>
+                        Nomor Telepon / Hp
+                      </Text>
+                      <TextInput
+                        style={tw`text-gray-500 font-bold text-sm `}
+                        value={"9048948203194"}
+                        editable={false}
+                      />
+                    </View>
+                    <View style={tw`flex flex-row items-center`}>
+                      <Text style={tw`text-[#2E4F74] font-bold text-sm w-2/4`}>
+                        Nomor Orang Tua
+                      </Text>
+                      <TextInput
+                        style={tw`text-gray-500 font-bold text-sm `}
+                        value={"9048948203194"}
+                        editable={false}
+                      />
+                    </View>
+                    <View style={tw`flex flex-row items-center`}>
+                      <Text style={tw`text-[#2E4F74] font-bold text-sm w-2/4`}>
+                        Alamat
+                      </Text>
+                      <TextInput
+                        style={tw`text-gray-500 font-bold text-sm `}
+                        value={"Alam sutra"}
+                        editable={false}
+                      />
+                    </View>
+                    <View style={tw`flex flex-row items-center`}>
+                      <Text style={tw`text-[#2E4F74] font-bold text-sm w-2/4`}>
+                        Username
+                      </Text>
+                      <TextInput
+                        style={tw`text-gray-500 font-bold text-sm `}
+                        value={"Fandy"}
+                        editable={false}
+                      />
+                    </View>
+                    <View style={tw`flex flex-row items-center`}>
+                      <Text style={tw`text-[#2E4F74] font-bold text-sm w-2/4`}>
+                        Email
+                      </Text>
+                      <TextInput
+                        style={tw`text-gray-500 font-bold text-sm `}
+                        value={"fanvercel.co..id"}
+                        editable={false}
+                      />
+                    </View>
                   </View>
-                  <View style={tw`flex flex-row items-center`}>
-                    <Text style={tw`text-[#2E4F74] font-bold text-sm w-2/4`}>
-                      Nomor Orang Tua
-                    </Text>
-                    <TextInput
-                      style={tw`text-gray-700 text-sm `}
-                      value={"9048948203194"}
-                      editable={false}
-                    />
-                  </View>
-                  <View style={tw`flex flex-row items-center`}>
-                    <Text style={tw`text-[#2E4F74] font-bold text-sm w-2/4`}>
-                      Alamat
-                    </Text>
-                    <TextInput
-                      style={tw`text-gray-700 text-sm `}
-                      value={"Alam sutra"}
-                      editable={false}
-                    />
-                  </View>
-                  <View style={tw`flex flex-row items-center`}>
-                    <Text style={tw`text-[#2E4F74] font-bold text-sm w-2/4`}>
-                      Username
-                    </Text>
-                    <TextInput
-                      style={tw`text-gray-700 text-sm `}
-                      value={"Fandy"}
-                      editable={false}
-                    />
-                  </View>
-                  <View style={tw`flex flex-row items-center`}>
-                    <Text style={tw`text-[#2E4F74] font-bold text-sm w-2/4`}>
-                      Email
-                    </Text>
-                    <TextInput
-                      style={tw`text-gray-700 text-sm `}
-                      value={"fanvercel.co..id"}
-                      editable={false}
-                    />
-                  </View>
-                </View>
+                </ImageBackground>
               </View>
             </View>
           );
